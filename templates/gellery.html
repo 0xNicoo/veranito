@@ -1,0 +1,5 @@
+{{ range . }}
+  <img src="{{ . }}" class="w-full h-auto rounded shadow" />
+{{ else }}
+  <p class="col-span-full text-center text-gray-500">No hay imágenes todavía</p>
+{{ end }}
