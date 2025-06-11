@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Campeones - Veranito</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body class="bg-orange-50 min-h-screen">
+  {{ template "header.html" . }}
+
+  <main class="max-w-6xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 flex items-center justify-center gap-2">
+      <span>🏆</span> Campeones de la Semana <span>🏆</span>
+    </h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-lg shadow">
+        <thead>
+          <tr class="bg-gray-100 text-gray-700">
+            <th class="py-3 px-4 text-left">Semana</th>
+            <th class="py-3 px-4 text-left">Días</th>
+            <th class="py-3 px-4 text-left">Campeón</th>
+            <th class="py-3 px-4 text-left">Motivo</th>
+            <th class="py-3 px-4 text-left">Campeonatos</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range . }}
+          <tr class="border-b hover:bg-gray-50">
+            <td class="py-3 px-4">{{ .Semana }}</td>
+            <td class="py-3 px-4">{{ .Dias }}</td>
+            <td class="py-3 px-4">{{ .Nombre }}</td>
+            <td class="py-3 px-4">{{ .Motivo }}</td>
+            <td class="py-3 px-4">{{ .Campeonatos }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html> 

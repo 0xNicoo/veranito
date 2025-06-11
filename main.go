@@ -8,13 +8,26 @@ import (
 	"path/filepath"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*.html"))
+var templates = template.Must(template.ParseFiles(
+	"templates/index.html",
+	"templates/campeones.html",
+	"templates/header.html",
+))
+
+type Campeon struct {
+	Semana      int
+	Dias        string
+	Nombre      string
+	Motivo      string
+	Campeonatos int
+}
 
 func main() {
 	os.MkdirAll("uploads", os.ModePerm)
 
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/upload", uploadHandler)
+	http.HandleFunc("/campeones", campeonesHandler)
 	http.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir("uploads"))))
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
@@ -60,4 +73,17 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Devolvemos solo el bloque de la galería
 	templates.ExecuteTemplate(w, "gallery.html", getImagePaths())
+}
+
+func campeonesHandler(w http.ResponseWriter, r *http.Request) {
+	campeones := []Campeon{
+		{1, "28/04/2025 - 04/05/2025", "Sebastian Gonzalez Tello", "Por peruano", 1},
+		{2, "05/05/2025 - 11/05/2025", "Emiliano Rios", "Cronograma", 1},
+		{3, "12/05/2025 - 18/05/2025", "Rafael Eguren", "Por cabra", 1},
+		{4, "19/05/2025 - 25/05/2025", "Juan Ignacio Frangolini", "Pegó laburo", 1},
+		{5, "26/05/2025 - 01/06/2025", "Victoria Miranda", "Recibida", 1},
+		{6, "02/06/2025 - 08/06/2025", "Tomas Pipolo", "Se votó solo", 1},
+		{7, "09/06/2025 - 15/06/2025", "Nicolas Morales", "Justicia divina", 1},
+	}
+	templates.ExecuteTemplate(w, "campeones.html", campeones)
 }
