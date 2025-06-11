@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Veranito</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 </head>
-<body class="bg-gray-900 text-white p-4">
-  <h1 class="text-2xl font-bold mb-4">¿Te garcho?</h1>
+<body class="bg-orange-50 min-h-screen">
+  {{ template "header.html" }}
 
-  <!-- Galería -->
-  <div id="gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    {{ range . }}
-      <img src="{{ . }}" class="w-full h-auto rounded shadow" />
-    {{ else }}
-      <p class="col-span-full text-center text-gray-500">No hay imágenes todavía</p>
-    {{ end }}
-  </div>
+  <!-- Galería de imágenes -->
+  <main class="max-w-6xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Galería</h2>
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {{ range . }}
+        <div class="bg-white rounded-lg shadow p-2 flex items-center justify-center aspect-square overflow-hidden">
+          <img src="{{ . }}" class="object-cover w-full h-full rounded" />
+        </div>
+      {{ else }}
+        <p class="col-span-full text-center text-gray-400">No hay imágenes todavía</p>
+      {{ end }}
+    </div>
+  </main>
 </body>
 </html>
