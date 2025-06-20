@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'W95FA';
+  src: url('https://fontsarena.com/wp-content/uploads/2024/07/w95fa-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #c0c0c0; /* Windows 95 gray */
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "W95FA", "MS Sans Serif", "Pixelar", "Arial", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #c0c0c0;
+    --foreground: #000000;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: #008080; /* fallback color */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+.win95-button {
+  background: #c0c0c0;
+  border: 1px solid;
+  border-color: #fefefe #808080 #808080 #fefefe;
+  box-shadow: 0 0 0 1px #000;
+  padding: 2px 8px;
+  color: #000000;
+}
+
+.win95-button:active {
+    border-color: #808080 #fefefe #fefefe #808080;
+}
+
+.win95-window {
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #fefefe #808080 #808080 #fefefe;
+    box-shadow: 0 0 0 1px #000;
+    padding: 3px;
+}
+
+.win95-title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    font-weight: bold;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.win95-title-bar-buttons {
+    display: flex;
+}
+
+.win95-title-bar-buttons button {
+    width: 16px;
+    height: 14px;
+    margin-left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Marlett", "Arial", sans-serif;
+    font-size: 10px;
+}
+
+.inset-border {
+  border: 1px solid;
+  border-color: #808080 #fefefe #fefefe #808080;
+  padding: 2px;
 }
