@@ -6,7 +6,7 @@ import { Buttons } from "./buttons";
 export const Menu = () => {
     const icons = [
         { src: "/image/icons/home.png", label: "Home", href: "/" },
-        { src: "/image/icons/galery.png", label: "Galeria", href: "/proximamente" },
+        { src: "/image/icons/galery.png", label: "Galeria", href: "/galeria" },
         { src: "/image/icons/star.png", label: "Campeones", href: "/campeones" },
         { src: "/image/icons/ng.png", label: "Never goon", href: "https://www.youtube.com/watch?v=ExXG-II_8eY" },
         { src: "/image/icons/login.png", label: "Login", href: "/proximamente" },
