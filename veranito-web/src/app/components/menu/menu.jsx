@@ -1,15 +1,16 @@
+"use client";
 import { MenuIcon } from "./menuIcon";
 
 export const Menu = () => {
     const icons = [
         { src: "/image/icons/home.png", label: "Home", href: "/" },
         { src: "/image/icons/galery.png", label: "Galeria", href: "/proximamente" },
-        { src: "/image/icons/star.png", label: "Campeones", href: "/proximamente" },
+        { src: "/image/icons/star.png", label: "Campeones", href: "/campeones" },
         { src: "/image/icons/ng.png", label: "Never goon", href: "https://www.youtube.com/watch?v=ExXG-II_8eY" },
         { src: "/image/icons/login.png", label: "Login", href: "/proximamente" },
         { src: "/image/icons/heart.png", label: "Wholesome Moments", href: "/proximamente" },
         { src: "/image/icons/10.png", label: "El die", href: "/proximamente" }
-      ];
+    ];
 
     return (
         <div className="win95-window w-full max-w-2xl mt-4">
@@ -27,9 +28,9 @@ export const Menu = () => {
                 </div>
             </div>
             <div className="inset-border p-1 text-xs flex justify-between">
-                    <span>©2025 Veranito</span>
-                    <span>Never goon</span>
+                <span>©2025 Veranito</span>
+                <span>Never goon</span>
             </div>
-      </div>    
-    )
-}
+        </div>    
+    );
+};

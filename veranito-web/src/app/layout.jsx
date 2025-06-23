@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Navbar } from "./components/Navbar";
 import Link from "next/link";
 import "./globals.css";
 
@@ -22,18 +23,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex flex-col items-center p-4">
-          <p className="text-lg">El sitio web oficial de Veranito! <a href="curisosgarchados.com" className="text-blue-600 underline">curiososgarchados.com</a></p>
-          <div className="inset-border mt-4 p-1 flex space-x-2">
-            <Link href="/" className="win95-button">Home</Link>
-            <Link href="/proximamente" className="win95-button">Galeria</Link>
-            <Link href="/proximamente" className="win95-button">Campeones</Link>
-            <Link href="/proximamente" className="win95-button">Login</Link>
-          </div>
+          <header className="text-center mb-4">
+              <p>El sitio web oficial de Veranito!{' '}
+                  <Link href="http://curiososgarchados.com" target="_blank" className="text-blue-600 underline">
+                      curiososgarchados.com
+                  </Link>
+              </p>
+          </header>
+          <Navbar />
         </div>
-        {children}
-        <div className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold mt-4">Created whit ♡ by Veranito™</h1>
-        </div>
+        <main className="flex flex-col items-center">
+            {children}
+        </main>
       </body>
     </html>
   );
