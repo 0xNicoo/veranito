@@ -35,6 +35,9 @@ export default function RootLayout({ children }) {
         <main className="flex flex-col items-center">
             {children}
         </main>
+        <div className="flex flex-col items-center">
+          <h1 className="text-2xl font-bold mt-4">Created whit ♡ by Veranito™</h1>
+        </div>
       </body>
     </html>
   );

@@ -1,5 +1,7 @@
 "use client";
 import { MenuIcon } from "./menuIcon";
+import { Window } from "../window";
+import { Buttons } from "./buttons";
 
 export const Menu = () => {
     const icons = [
@@ -13,24 +15,10 @@ export const Menu = () => {
     ];
 
     return (
-        <div className="win95-window w-full max-w-2xl mt-4">
-            <div className="win95-title-bar">
-                <span>Menu</span>
-                <div className="win95-title-bar-buttons">
-                    <button className="win95-button">_</button>
-                    <button className="win95-button">□</button>
-                    <button className="win95-button">X</button>
-                </div>
+        <Window title="Menu" buttons={<Buttons />} footerLeft="©2025 Veranito" footerRight="Never goon">
+            <div className="grid grid-cols-4 gap-6">
+                {icons.map(icon => <MenuIcon key={icon.label} buttons={<Buttons />} src={icon.src} label={icon.label} href={icon.href} />)}
             </div>
-            <div className="p-4 bg-[#c0c0c0] min-h-112">
-                <div className="grid grid-cols-4 gap-6">
-                    {icons.map(icon => <MenuIcon key={icon.label} src={icon.src} label={icon.label} href={icon.href} />)}
-                </div>
-            </div>
-            <div className="inset-border p-1 text-xs flex justify-between">
-                <span>©2025 Veranito</span>
-                <span>Never goon</span>
-            </div>
-        </div>    
+        </Window>
     );
 };
