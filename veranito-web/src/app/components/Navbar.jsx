@@ -10,7 +10,7 @@ export const Navbar = () => {
     return (
         <nav className="my-4">
             <NavButton href="/">Home</NavButton>
-            <NavButton href="/proximamente">Galeria</NavButton>
+            <NavButton href="/galeria">Galeria</NavButton>
             <NavButton href="/campeones">Campeones</NavButton>
             <NavButton href="/proximamente">Login</NavButton>
         </nav>
