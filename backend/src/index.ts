@@ -12,16 +12,16 @@ app.use(express.json());
 
 AppDataSource.initialize()
   .then(() => {
-    console.log('📦 Conexión a la base de datos exitosa');
+    console.log('Conexión a la base de datos exitosa');
 
-    app.get('/', (_, res) => {
-      res.send('🚀 API de Veranito funcionando');
+    app.get('/api', (_, res) => {
+      res.send('API de Veranito funcionando');
     });
 
     app.listen(3000, () => {
-      console.log('✅ Servidor corriendo en http://localhost:3000');
+      console.log('Servidor corriendo en http://localhost:3000');
     });
   })
   .catch((error) => {
-    console.error('❌ Error al conectar con la base de datos:', error);
+    console.error('Error al conectar con la base de datos:', error);
   });
