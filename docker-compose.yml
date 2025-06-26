@@ -21,4 +21,5 @@ volumes:
 
 networks:
   default:
-    name: veranito_net
+    external: true
+    name: proxy_net
