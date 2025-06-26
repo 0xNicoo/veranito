@@ -23,6 +23,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -p5209 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             cd ${{ secrets.VPS_PATH }}
             git pull origin main
-            docker-compose -f docker-compose.yml build
-            docker-compose -f docker-compose.yml up -d
+            docker-compose down --remove-orphans
+            docker-compose build --remove-orphans
+            docker-compose up -d
           EOF
