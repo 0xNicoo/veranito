@@ -6,7 +6,7 @@ export default function ComingSoonPage() {
       <div className="text-center">
         <div className="w-full max-w-2xl">
           <Image
-            src="/image/images/proximamente.png" //asd
+            src="/image/images/proximamente.png" 
             alt="Página en construcción"
             width={800}
             height={600}
