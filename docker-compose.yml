@@ -18,3 +18,7 @@ services:
 
 volumes:
   veranito-pgdata:
+
+networks:
+  default:
+    name: veranito_net
