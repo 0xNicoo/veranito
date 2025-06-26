@@ -22,8 +22,11 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -p5209 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             cd ${{ secrets.VPS_PATH }}
+            echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" > .env
+            echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
+            echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> .env
             git pull origin main
             docker-compose down --remove-orphans
-            docker-compose build --remove-orphans
-            docker-compose up -d
+            docker-compose --env-file .env build --remove-orphans
+            docker-compose --env-file .env up -d
           EOF
