@@ -12,6 +12,8 @@ export default function CampeonesPage() {
     { semana: 6, dias: "02/06/2025 - 08/06/2025", campeon: "Tomas Pipolo", motivo: "Se votó solo", campeonatos: '⭐' },
     { semana: 7, dias: "09/06/2025 - 15/06/2025", campeon: "Nicolas Morales", motivo: "Justicia divina", campeonatos: '⭐' },
     { semana: 8, dias: "16/06/2025 - 22/06/2025", campeon: "Juan Ignacio Frangolini", motivo: "Cumpleaños", campeonatos: '⭐⭐' },
+    { semana: 9, dias: "23/06/2025 - 29/06/2025", campeon: "Dolores Dominguez", motivo: "Semana de mierda", campeonatos: '⭐' },
+    { semana: 10, dias: "30/06/2025 - 06/07/2025", campeon: "Emiliano Rios", motivo: "JODA DEL SIGLO", campeonatos: '⭐⭐' },
   ];
 
   return (
